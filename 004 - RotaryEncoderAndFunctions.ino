@@ -108,14 +108,14 @@ void displayChange() {
 
 
 long readRotaryEncoder() {
-  long virtualpos = 0;
   if(TurnDetected) {
     if(up) {
-      virtualPosition--; // My rotary encoder turns the oposite way of the form code...
+      return -1; // My rotary encoder turns the oposite way of the form code...
     } else {
-      virtualPosition++;
+      return 1;
     }
   }
+  return 0;
 }
 
 
